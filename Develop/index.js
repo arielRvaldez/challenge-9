@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const generateREADME = require('.utils/generateMarkdown');
+const generateREADME = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 inquirer
@@ -10,8 +10,8 @@ inquirer
 {
     type: 'input',
     message: 'what is the title of your project?',
-    name: 'Title',
-    default: 'Project Title Goes Here',
+    name: 'title',
+    // default: 'Project Title Goes Here',
 },
 {
     type: 'input',
@@ -66,20 +66,21 @@ inquirer
     var generate = generateREADME(answers);
 
 // TODO: Create a function to write README file
+var fileName = 'YourREADME.md';
 fs.writeFile(fileName, generate, (err) => 
     err ? console.log(err) : console.log('Successfully created professional README.md!')
 );
 });
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer
-     .prompt(questions)
-     .then(answers => {
-        var fileName = 'YourREADME.md';
-        writeToFile(fileName, answers);
-     })
-}
+// function init() {
+//     inquirer
+//      .prompt(questions)
+//      .then(answers => {
+//         var fileName = 'YourREADME.md';
+//         writeToFile(fileName, answers);
+//      })
+// }
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();

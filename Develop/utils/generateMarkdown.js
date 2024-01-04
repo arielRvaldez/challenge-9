@@ -48,41 +48,44 @@ function generateMarkdown(data) {
   var licenseBadge = renderLicenseBadge(data.license);
   var licenseLink = renderLicenseLink(data.license);
   console.log(licenseBadge);
-  return ` # ${data.title}
-            ${licenseBadge}
-        ## Description
-        ${data.description}
+  return ` 
+### ${data.title}
+${licenseBadge}
+## Description
+${data.description}
 
-        ## Table of Contents
-        - [Installation](#installation)
+## Table of Contents
+- [Installation](#installation)
 
-        - [Usage](#usage)
+- [Usage](#usage)
 
-        - [License](#license)
+- [License](#license)
+${renderLicenseBadge (data.license)}
+${renderLicenseLink (data.license)}
 
-        - [Tests](#tests)
+- [Tests](#tests)
 
-        - [Contributions](#contribution)
+- [Contributions](#contribution)
 
-        - [Questions](#questions)
+- [Questions](#questions)
       
-        # Installation
-        ${data.installation}
+# Installation
+${data.installation}
 
-        # Usage
-        ${data.usage}
+# Usage
+${data.usage}
 
-        # Contribution
-        ${data.contribution}
+# Contribution
+${data.contribution}
 
-        # Tests
-        ${data.test}
+# Tests
+${data.test}
 
-        ## Questions
-        GitHub UserName: [${data.GitHub}](www.github.com/${data.GitHub})
+## Questions
+GitHub UserName: [${data.GitHub}](www.github.com/${data.GitHub})
 
-        Contact me with any questions.
-      (mailto: ${data.email})
+Contact me with any questions.
+(mailto: ${data.email})
 `;
 }
 

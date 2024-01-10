@@ -11,7 +11,6 @@ inquirer
     type: 'input',
     message: 'what is the title of your project?',
     name: 'title',
-    // default: 'Project Title Goes Here',
 },
 {
     type: 'input',
@@ -33,23 +32,23 @@ inquirer
     message: 'What License do you want to use?',
     name: 'license',
     choices: [
-        'Apache', 'Academic', 'MIT', 'Mozilla', 'Pearl'
+        'Apache', 'MIT', 'Mozilla', 'Perl'
     ],
 },
 {
     type: 'input',
-    message: 'List contributors if any: ',
+    message: 'List contributors, if any: ',
     name: 'contribution',
 },
 {
     type: 'input',
-    message: 'How can I test this project?',
+    message: 'How can I test this project, if any?',
     name: 'test',
 },
 {
     type: 'input',
     name: 'questions',
-    message: 'What do I do if I have an issue?',
+    message: 'How does the user contact you with an issue?',
 },
 {
     type: 'input',
@@ -65,22 +64,9 @@ inquirer
 .then((answers) => {
     var generate = generateREADME(answers);
 
-// TODO: Create a function to write README file
+// function to write README file
 var fileName = 'YourREADME.md';
 fs.writeFile(fileName, generate, (err) => 
     err ? console.log(err) : console.log('Successfully created professional README.md!')
 );
-});
-
-// TODO: Create a function to initialize app
-// function init() {
-//     inquirer
-//      .prompt(questions)
-//      .then(answers => {
-//         var fileName = 'YourREADME.md';
-//         writeToFile(fileName, answers);
-//      })
-// }
-
-// // Function call to initialize app
-// init();
+})

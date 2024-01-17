@@ -50,7 +50,7 @@ function generateMarkdown(data) {
   //console.log(licenseBadge);
   return ` 
 ### ${data.title}
-${licenseBadge}
+${renderLicenseBadge}
 
 # Description
 ${data.description}
